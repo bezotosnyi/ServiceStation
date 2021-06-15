@@ -1,0 +1,45 @@
+﻿@model ServiceStation.BLL.Models.CarDTO
+<h4>Car</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CarNumber" class="control-label">Car number</label>
+                <input asp-for="CarNumber" class="form-control" />
+                <span asp-validation-for="CarNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarModel" class="control-label">Car model</label>
+                <input asp-for="CarModel" class="form-control" />
+                <span asp-validation-for="CarModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EngineCapacity" class="control-label">Engine capacity</label>
+                <input asp-for="EngineCapacity" class="form-control" />
+                <span asp-validation-for="EngineCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BodyNumber" class="control-label">Body nubmer</label>
+                <input asp-for="BodyNumber" class="form-control" />
+                <span asp-validation-for="BodyNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearOfProduction" class="control-label">Year of production</label>
+                <input asp-for="YearOfProduction" class="form-control" />
+                <span asp-validation-for="YearOfProduction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" /> |
+                <a asp-action="Index">Back</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <img class="" src="https://i.pinimg.com/564x/b7/b8/58/b7b85879316062886c12f5a368b0a085.jpg" style="opacity:0.5" />
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ServiceStation.BLL.Models.InspectorDTO>
+@inject SignInManager<Employee> SignInManager
+@inject UserManager<Employee> UserManager
+@using Microsoft.AspNetCore.Identity
+@using ServiceStation.DAL.Models
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                First name
+            </th>
+            <th>
+                Last name
+            </th>
+            <th>
+                Middle name
+            </th>
+            <th>
+                Position
+            </th>
+            <th>
+                Salary
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.Id)</td>
+                <td> @Html.DisplayFor(modelItem => item.Firstname)</td>
+                <td> @Html.DisplayFor(modelItem => item.LastName)</td>
+                <td> @Html.DisplayFor(modelItem => item.MiddleName)</td>
+                <td> @Html.DisplayFor(modelItem => item.Position)</td>
+                <td> @Html.DisplayFor(modelItem => item.Salary)</td>
+                <td>
+                    <a class="list-group-item list-group-item-action list-group-item-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                </td>
+                <td>
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("admin"))
+                    {
+                        <a class="list-group-item list-group-item-action list-group-item-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+                <td>
+                    <a class="list-group-item list-group-item-action list-group-item-info" asp-action="Detail" asp-route-id="@item.Id">Detail</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>
+                <a class="list-group-item list-group-item-action list-group-item-success" asp-action="Create">Create</a>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<center>
+    <img class="" src="https://i.pinimg.com/564x/b7/b8/58/b7b85879316062886c12f5a368b0a085.jpg" style="opacity:0.5" />
+</center>

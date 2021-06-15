@@ -1,0 +1,51 @@
+﻿@model ServiceStation.BLL.Models.OrderDTO
+
+<div>
+    <hr />
+    <img class="" src="https://i.pinimg.com/564x/b7/b8/58/b7b85879316062886c12f5a368b0a085.jpg" style="float:right; opacity:0.5" />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <label asp-for="Date">Date</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Date
+        </dd>
+        <dt class="col-sm-2">
+            <label asp-for="ServiceName">Service</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.ServiceName
+        </dd>
+        <dt class="col-sm-2">
+            <label asp-for="Price">Price</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Price
+        </dd>
+        <dt class="col-sm-2">
+            <label asp-for="CarId">Car id</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.CarId
+        </dd>
+        <dt class="col-sm-2">
+            <label asp-for="OwnerId">Owner id</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.OwnerId
+        </dd>
+        <dt class="col-sm-2">
+            <label asp-for="InspectorId">Inspector id</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.InspectorId
+        </dd>
+        <dt class="col-sm-2">
+            <label asp-for="IsCompleted">Completed</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.IsCompleted
+        </dd>
+    </dl>
+    <a asp-action="Index">Back</a>
+</div>

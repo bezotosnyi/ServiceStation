@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ServiceStation.BLL.Models.OrderDTO>
+@inject SignInManager<Employee> SignInManager
+@inject UserManager<Employee> UserManager
+@using Microsoft.AspNetCore.Identity
+@using ServiceStation.DAL.Models
+
+<h4>Order</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                Service
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Car id
+            </th>
+            <th>
+                Owner id
+            </th>
+            <th>
+                Inspector id
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @if (item.IsCompleted == true)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.Date)</td>
+                    <td> @Html.DisplayFor(modelItem => item.ServiceName)</td>
+                    <td> @Html.DisplayFor(modelItem => item.Price)</td>
+                    <td> @Html.DisplayFor(modelItem => item.CarId)</td>
+                    <td> @Html.DisplayFor(modelItem => item.OwnerId)</td>
+                    <td> @Html.DisplayFor(modelItem => item.InspectorId)</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-action="Index">Back</a>
+</p>
+<center>
+    <img class="" src="https://i.pinimg.com/564x/b7/b8/58/b7b85879316062886c12f5a368b0a085.jpg" style="opacity:0.5" />
+</center>

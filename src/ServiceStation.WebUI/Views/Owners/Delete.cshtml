@@ -1,0 +1,39 @@
+﻿@model ServiceStation.BLL.Models.OwnerDTO
+
+<h3>Are you sure?</h3>
+<div>
+    <hr />
+    <img class="" src="https://i.pinimg.com/564x/b7/b8/58/b7b85879316062886c12f5a368b0a085.jpg" style="float:right; opacity:0.5" />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <label asp-for="Firstname">First name</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Firstname
+        </dd>
+        <dt class="col-sm-2">
+            <label asp-for="LastName">Last name</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.LastName
+        </dd>
+        <dt class="col-sm-2">
+            <label asp-for="MiddleName">Middle name</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.MiddleName
+        </dd>
+        <dt class="col-sm-2">
+            <label asp-for="PhoneNum">Phone number</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PhoneNum
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteById">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back</a>
+    </form>
+</div>
